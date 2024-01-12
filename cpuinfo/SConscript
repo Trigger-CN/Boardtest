@@ -1,0 +1,11 @@
+
+from buildconfig import *
+
+# get current directory
+cwd = GetCurrentDir()
+objs = Glob('*.c')
+CPPPATH = [cwd]
+
+AppendCPPPATH(CPPPATH)
+
+Return('objs')
