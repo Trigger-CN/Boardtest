@@ -1,5 +1,6 @@
 #include "cpuinfo.h"
 #include "boardinfo.h"
+#include "pi_test.h"
 #include "memoryspeed.h"
 #include "coremark.h"
 #include <stdio.h>
@@ -19,6 +20,9 @@ int main(void)
     printf("\n-memspeed start-\n");
     memspeed_test_main();
     
+    printf("\n-calculate pi start-\n");
+    pi_test_main();
+
     printf("\n-coremark start-\n");
     coremark_main();
 #endif
