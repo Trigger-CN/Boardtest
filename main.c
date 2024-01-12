@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#define ONLY_INFO 1
+#define ONLY_INFO 0
 
 int main(void)
 {
@@ -14,7 +14,7 @@ int main(void)
 
     cpuinfo_main();
     print_all_temp();
-
+    print_mem_free();
 #if !(ONLY_INFO)
     printf("\n-memspeed start-\n");
     memspeed_test_main();

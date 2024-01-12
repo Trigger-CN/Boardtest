@@ -37,7 +37,6 @@ double get_cpu_freq_ghz(int cpuIndex, const char* str_name)
     if(fb >= 0)
     {
         char content[128];
-        int d = 0;
         read(fb, content, 1024);
         close(fb);
         int cpuFreq = 0;
