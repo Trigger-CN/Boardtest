@@ -28,13 +28,12 @@ STRIP = PREFIX + 'strip'
 DEVICE = ''
 CFLAGS = DEVICE + ' -Os -g3 -W -Wall -std=gnu99'
 AFLAGS = DEVICE
-LFLAGS = DEVICE + ' -o "boardtest.elf" '
+LFLAGS = DEVICE + '-fopenmp -o "boardtest.elf" '
 LFLAGS += ' -Wl,-Map="boardtest.map" '
 
 if BUILD == 'release':
     CFLAGS += ' -O2 -Os'
 
-# POST_ACTION = OBJCPOY + ' -Obinary $TARGET rtthread.bin\n'
 POST_ACTION = OBJCOPY + ' -O ihex $TARGET boardtest.hex\n'
 POST_ACTION += SIZE + ' $TARGET \n'
 
